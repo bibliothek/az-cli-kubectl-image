@@ -1,0 +1,5 @@
+FROM mcr.microsoft.com/azure-cli
+RUN az aks install-cli
+RUN curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+RUN echo 'alias k=kubectl' >> ~/.bashrc
+CMD ["/bin/bash"]
